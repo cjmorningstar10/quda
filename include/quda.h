@@ -464,6 +464,10 @@ extern "C" {
     /** The t0 parameter for distance preconditioning, the timeslice where the source is located */
     int distance_pc_t0;
 
+    /** Whether to use the smeared gauge field for the Dirac operator
+        for whose eigenvalues are are computing. */
+    QudaBoolean use_smeared_gauge;
+
   } QudaInvertParam;
 
   // Parameter set for solving eigenvalue problems.
@@ -507,7 +511,7 @@ extern "C" {
 
     /** Whether to use the smeared gauge field for the Dirac operator
         for whose eigenvalues are are computing. */
-    bool use_smeared_gauge;
+    QudaBoolean use_smeared_gauge;
 
     /** What type of Dirac operator we are using **/
     /** If !(use_norm_op) && !(use_dagger) use M. **/
