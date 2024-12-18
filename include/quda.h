@@ -464,8 +464,8 @@ extern "C" {
     /** The t0 parameter for distance preconditioning, the timeslice where the source is located */
     int distance_pc_t0;
 
-    /** Whether to use the smeared gauge field for the Dirac operator
-        for whose eigenvalues are are computing. */
+    /** Whether to use the smeared gauge field for the Dirac operator, usually
+        when defined as a spatial Laplacian: mainly used in computing Laplacian eigenvectors */
     QudaBoolean use_smeared_gauge;
 
   } QudaInvertParam;
@@ -508,10 +508,6 @@ extern "C" {
         than the one used to generate the space, then this should be
         false, but preserve_deflation would be true */
     QudaBoolean preserve_evals;
-
-    /** Whether to use the smeared gauge field for the Dirac operator
-        for whose eigenvalues are are computing. */
-    QudaBoolean use_smeared_gauge;
 
     /** What type of Dirac operator we are using **/
     /** If !(use_norm_op) && !(use_dagger) use M. **/

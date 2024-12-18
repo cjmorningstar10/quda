@@ -2577,8 +2577,6 @@ void eigensolveQuda(void **host_evecs, double _Complex *host_evals, QudaEigParam
   // Ensure that the parameter structures are sound.
   checkInvertParam(inv_param);
   checkEigParam(eig_param);
-  if (inv_param->use_smeared_gauge != eig_param->use_smeared_gauge){
-     errorQuda("Parameter use_smeared_gauge should be same in eig_param and *(eig_param.invert_param)\n");}
 
   // Check that the gauge field is valid
   GaugeField *cudaGauge = checkGauge(inv_param);
